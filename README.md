@@ -1,4 +1,4 @@
-# size_fsckery
+# func-size-testing
 
 This repository aims to answer the question:
 
@@ -10,10 +10,10 @@ For private member fields you can expect the size to be consistent with the memb
 
     class Class0 {
         private:
-            uint64_t data; // I think it's going to be 64 bits
+            uint64_t data; // I think it's going to be 64 bits for each instance at runtime
     }
 
-But how much space does an empty virtual function take up.
+But how much space does an empty virtual function take up?
 
 class0.h
 
@@ -43,11 +43,11 @@ Output:
 
     it works
 
-The main interest in this repo is the 
+The results can be controlled by the variable `n` in the python script.
 
     n = 10 # number of classes to output
 
-in the python file, want to create 1000 C++ classes with virtual functions and see how big the final binary is.
+Lets create 1000 C++ classes with virtual functions and see how big the final binary is.
 
 # Some approximate results:
 
