@@ -2,7 +2,7 @@ main:
 	g++ -Wall *.cpp -o main
 
 all:
-	main
+	clean main
 
 clean:
 	rm -rf main

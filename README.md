@@ -43,4 +43,40 @@ Output:
 
     it works
 
+The main interest in this repo is the 
 
+    n = 10 # number of classes to output
+
+in the python file, want to create 1000 C++ classes with virtual functions and see how big the final binary is.
+
+# Some approximate results:
+
+Just including 10 classes with virtual functions:
+
+    15 KB
+
+10 classes with non virtual functions:
+
+    9 KB
+
+10 classes with no function:
+
+    9 KB
+
+1000 classes with virtual functions:
+
+    398 KB
+
+1000 classes with non virtual functions:
+
+    139 KB
+
+1000 classes with no function:
+
+    45 KB
+
+# The real results
+
+Yeah, virtual functions made our binary larger, but 1000 classes took a decent amount of time to compile and that's also annoying.
+
+TODO: compile with -g and attach with gdb and check runtime memory consumption

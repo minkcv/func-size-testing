@@ -1,4 +1,8 @@
- # what have I done >:(
+# what have I done >:(
+# This is a python script that generates c++ classes, each in their own file.
+# It creates a ton of files so be careful. I tested 1000 classes (2000 files) and 
+# survived but your storage media might not or your operating system might not be 
+# able to handle listing the folder. NO WARRANTY
 n = 10 # number of classes to output
 mainFile = open("main.cpp", "w")
 mainFile.write("#include <stdio.h>\n")
@@ -20,10 +24,12 @@ for i in range(n):
 
     mainFile.write(f"#include \"class{i}.h\"\n")
 
-mainFile.write(f"""int main() {{
-    Class{i} class{i};
-    printf("it works\\n");
-    return 0;
-}}
-""")
+
+mainFile.write("int main() {\n")
+for i in range (n):
+    continue
+    #mainFile.write(f"    Class{i} class{i};\n")
+    #mainFile.write(f"    class{i}.foo();\n")
+
+mainFile.write("""    printf("it works\\n");\n    return 0;\n}""")
 mainFile.close()
